@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 
 export default function Create() {
+  const Router = useRouter();
   return (
     <form
       onSubmit={(e) => {
@@ -32,7 +33,9 @@ export default function Create() {
         <textarea name="body" placeholder="body"></textarea>
       </p>
       <p>
-        <button type="submit" value="create" />
+        <button name="submit" type="submit" value="create">
+          create
+        </button>
       </p>
     </form>
   );
