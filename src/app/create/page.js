@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 
 export default function Create() {
-  const Router = useRouter();
+  const router = useRouter();
   return (
     <form
       onSubmit={(e) => {
@@ -22,7 +22,8 @@ export default function Create() {
           .then((result) => {
             console.log(result);
             const last_id = result.id;
-            Router.push(`/read/${last_id}`);
+            router.refresh();
+            router.push(`/read/${last_id}`);
           });
       }}
     >
